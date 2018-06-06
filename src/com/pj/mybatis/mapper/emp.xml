@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pj.mybatis.mapper.emp">
+	<sql id="empSql">
+		select * from scott.emp
+	</sql>
+	<!-- 增删改查
+	  <insert id="save" parameterType="User">  
+        insert into user(uname,upass) values (#{uname},#{upass})  
+    </insert>  
+  
+    <delete id="delete" parameterType="int">  
+        delete from user where uid=#{uid}  
+    </delete>  
+  
+    <update id="update" parameterType="User">  
+        update user set uname=#{uname},upass=#{upass} where uid=#{uid}  
+    </update>  
+	 -->
+	<select id="findEmp"  resultType="com.pj.mybatis.pojo.Emp" >
+		<include refid="empSql"/>
+	</select>
+	
+	
+  
+     
+</mapper>
